@@ -1,10 +1,10 @@
-fhand = open('mbox-short.txt')
-count = 0
+newlist=list()    
+fhand = open('romeo.txt')
 for line in fhand:
-    words = line.split()
-    # print('Debug:', words)
-    if len(words) == 0 : continue
-    if words[0] != 'From' : continue
-    count=count+1
-    print(words[1])
-print('There were',count,'lines in the file with From as the first word')
+    words=line.split()
+    for words in words:
+        if words in newlist:continue
+        newlist.append(words)
+        newlist.sort()
+print(newlist)
+        
